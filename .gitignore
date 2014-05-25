@@ -15,21 +15,21 @@
 *.war\
 \
 # gwt caches and compiled units #\
-war/gwt_bree/\
-gwt-unitCache/\
+war/autotag/*\
+gwt-unitCache/*\
 \
 # boilerplate generated classes #\
 .apt_generated/\
 \
 # more caches and things from deploy #\
-war/WEB-INF/deploy/\
-war/WEB-INF/classes/\
+war/WEB-INF/deploy/*\
+war/WEB-INF/classes/*\
 \
 #compilation logs\
 .gwt/\
 \
 #caching for already compiled files\
-gwt-unitCache/\
+gwt-unitCache/*\
 \
 #gwt junit compilation files\
 www-test/\
@@ -40,7 +40,11 @@ www-test/\
 /build\
 /classes\
 \
-*/web-app/gwt\
-*/web-app/WEB-INF/classes\
+*/war/WEB-INF/deploy/*\
+*/war/WEB-INF/classes/*\
+*/web-app/gwt/*\
+*/web-app/WEB-INF/classes/*\
+*/web-app/WEB-INF/deploy/*\
 target\
+*.DS_Store\
 }
