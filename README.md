@@ -1,1 +1,1 @@
-Working code at: <a href = 'http://autotag.appspot.com' > http://autotag.appspot.com </a>
+Working code at: <a href = 'http://autotagbox.appspot.com' > autotagbox.appspot.com </a>
