@@ -1,1 +1,1 @@
-Working code at: <a href = 'http://autotagbox.appspot.com' > autotagbox.appspot.com </a>
+Working code at: <a href = 'http://autotagbox.appspot.com' target = '_blank'> autotagbox.appspot.com </a>
