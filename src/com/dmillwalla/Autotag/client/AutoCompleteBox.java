@@ -26,10 +26,12 @@ import com.google.gwt.user.client.ui.MultiWordSuggestOracle;
 import com.google.gwt.user.client.ui.MultiWordSuggestOracle.MultiWordSuggestion;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.SuggestBox;
+import com.google.gwt.user.client.ui.SuggestOracle;
+import com.google.gwt.user.client.ui.SuggestOracle.Suggestion;
 
 
 
-public class AutoCompleteBox extends FocusPanel implements KeyDownHandler, SelectionHandler {
+public class AutoCompleteBox extends FocusPanel implements KeyDownHandler { 
 	FlowPanel rootPanel;
 	ScrollPanel container;
 	public SuggestBox inputBox;
@@ -84,7 +86,33 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler, Selec
 
 		inputBox.setAutoSelectEnabled(false);
 
-		inputBox.addSelectionHandler(this);
+		inputBox.addSelectionHandler( new SelectionHandler<SuggestOracle.Suggestion>() {
+
+			@Override
+			public void onSelection(SelectionEvent<Suggestion> event) {
+
+				inputBox.getValueBox().setText("");
+
+				MultiWordSuggestion select = (MultiWordSuggestion) event.getSelectedItem();
+
+
+
+				if(multiWord.isEmpty() || !multiWord.contains(select.getReplacementString()))
+				{
+
+
+					rootPanel.insert((IsWidget) new SearchTerms(select.getReplacementString()), rootPanel.getWidgetCount() - 1);
+
+				}
+
+
+				inputBox.setFocus(true);
+
+			
+			}
+			
+			
+		} );
 
 		inputBox.getValueBox().addKeyDownHandler(this);
 
@@ -450,27 +478,6 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler, Selec
 		}
 	}
 
-	@Override
-	public void onSelection(SelectionEvent event) {
-
-		inputBox.getValueBox().setText("");
-
-		MultiWordSuggestion select = (MultiWordSuggestion) event.getSelectedItem();
-
-
-
-		if(multiWord.isEmpty() || !multiWord.contains(select.getReplacementString()))
-		{
-
-
-			rootPanel.insert((IsWidget) new SearchTerms(select.getReplacementString()), rootPanel.getWidgetCount() - 1);
-
-		}
-
-
-		this.setFocus(true);
-
-	}
 
 }
 

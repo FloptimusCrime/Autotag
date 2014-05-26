@@ -7,6 +7,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -20,9 +21,12 @@ public class Autotag implements EntryPoint {
 	AutoCompleteBox _autocompleteBox = null;
 	HashSet<String> allSuggestions = new HashSet<String>();
 	HorizontalPanel _suggestContainer = new HorizontalPanel();
+	HorizontalPanel _labelConainer = new HorizontalPanel();
 	VerticalPanel _mainPanel = new VerticalPanel();
 	TextBox _suggestionBox = new TextBox();
+	Label _values = new Label("Autotag Values: ");
 	Button _submit = new Button("Add");
+	Button _show = new Button("Show Values");
 	
 	SuggestionSource _suggestionsSource = new SuggestionSource() {
 		
@@ -44,8 +48,12 @@ public class Autotag implements EntryPoint {
 		_suggestContainer.add(_suggestionBox);
 		_suggestContainer.add(_submit);
 		
+		_labelConainer.add(_values);
+		_labelConainer.add(_show);
+		
 		_mainPanel.add(_suggestContainer);
 		_mainPanel.add(_autocompleteBox);
+		_mainPanel.add(_labelConainer);
 		
 		RootPanel.get("rootContainer").add(_mainPanel);
 		
@@ -60,10 +68,20 @@ public class Autotag implements EntryPoint {
 					allSuggestions.add( _suggestionBox.getText() );
 					_mainPanel.remove(_autocompleteBox);
 					_autocompleteBox = new AutoCompleteBox(_suggestionsSource, true, false);
-					_mainPanel.add(_autocompleteBox);
+					_mainPanel.insert(_autocompleteBox,1);
 					_suggestionBox.setText(""); 
 					
 				}
+				
+			}
+		} );
+		
+		_show.addClickHandler( new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+
+				_values.setText("Autotag values: "+_autocompleteBox.getTextBoxValue());
 				
 			}
 		} );
