@@ -70,7 +70,6 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler, Selec
 	public void init( SuggestionSource suggestionSource, boolean multi){
 
 		text=new StringBuilder();
-		//		oracleList = new HashSet<String>();
 		multiSuggest = multi;
 		multiWord = new HashSet<String>();
 		suggestions = new HashSet<String>();
@@ -80,7 +79,6 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler, Selec
 		rootPanel = new FlowPanel();
 		container = new ScrollPanel();
 		inputBox.setStyleName("invisibleBorder");
-		//this.addStyleName(CSSConstant.scrollEnable);
 
 		this.addStyleName("combinedBorder");
 
@@ -106,9 +104,7 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler, Selec
 			this.addStyleName("noScroll");
 		}
 
-		//rootPanel.addStyleName(CSSConstant.invisibleBorder);
 
-		//this.setHeight("40px");
 		container.add(rootPanel);
 		this.add(container);
 		this.addClickHandler(new ClickHandler(){
@@ -303,7 +299,7 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler, Selec
 
 		}
 		else
-		{   // multiple values in the logic
+		{   
 			for(String eachWord : multiWord)
 			{
 				text.append(eachWord.trim() +",");
@@ -325,8 +321,6 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler, Selec
 
 		}
 
-		//		if( text.charAt(text.length()-1) == ',')
-		//			returnText = text.substring(0,text.length()-1);
 		if(text.length() > 0 && text.charAt(text.length()-1) == ',')
 			returnText = text.substring(0,text.length()-1);
 		else
@@ -373,7 +367,6 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler, Selec
 	}
 
 
-	//deletes the person on the left side of the SuggestBox, if you hit backspace
 	public void onKeyDown(KeyDownEvent event) {
 
 
@@ -396,22 +389,6 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler, Selec
 		MultiWordSuggestOracle oracle = new MultiWordSuggestOracle();
 
 
-		//		oracle.add("Mark Zuckerberg");
-		//		oracle.add("Tyler Winklevoss");
-		//
-		//		oracle.add("Cameron Winklevoss");
-		//		oracle.add("abc");
-		//
-		//		oracle.add("gef");
-		//
-		//		oracleList.add("Mark Zuckerberg");
-		//		oracleList.add("Tyler Winklevoss");
-		//
-		//		oracleList.add("Cameron Winklevoss");
-		//		oracleList.add("abc");
-		//
-		//		oracleList.add("gef");
-
 		if(_suggestionSource.getSuggestions() != null)
 		{
 			suggestions.addAll(_suggestionSource.getSuggestions());
@@ -419,7 +396,6 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler, Selec
 
 		for( String eachString : suggestions){
 			oracle.add(eachString);
-			//			oracleList.add(eachString);
 			System.out.println(eachString);
 		}
 
@@ -431,7 +407,6 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler, Selec
 		public SearchTerms(String txt) {
 			super(1, 2);
 			System.out.println(txt);
-			//this.setStyleName(CSSConstant.invisibleBorder);
 
 			if(!isDisabled){
 				this.addClickHandler(this);
@@ -445,9 +420,7 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler, Selec
 			multiWord.add(txt);
 			if(!multiSuggest)
 			{
-				//rootPanel.remove(inputBox);
 				inputBox.setVisible(false);
-				//inputBox.getValueBox().setReadOnly(true);
 			}
 
 
@@ -469,9 +442,7 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler, Selec
 
 				if(!multiSuggest)
 				{
-					//rootPanel.insert(inputBox, rootPanel.getWidgetCount()-1);
 					inputBox.setVisible(true);
-					//inputBox.getValueBox().setReadOnly(false);
 				}
 				this.setVisible(false);
 				this.removeFromParent();
