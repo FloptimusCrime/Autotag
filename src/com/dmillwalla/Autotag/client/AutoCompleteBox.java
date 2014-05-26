@@ -26,7 +26,6 @@ import com.google.gwt.user.client.ui.MultiWordSuggestOracle;
 import com.google.gwt.user.client.ui.MultiWordSuggestOracle.MultiWordSuggestion;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.SuggestBox;
-import com.google.gwt.user.client.ui.SuggestBox.DefaultSuggestionDisplay;
 
 
 
@@ -36,7 +35,6 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler, Selec
 	public SuggestBox inputBox;
 	SuggestionSource _suggestionSource;
 	MultiWordSuggestOracle _oracle = new MultiWordSuggestOracle();
-	DefaultSuggestionDisplay display;
 	StringBuilder text;
 	HashSet<String> multiWord;
 	HashSet<String> suggestions;
