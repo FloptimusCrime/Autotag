@@ -501,8 +501,6 @@ The AutoCompleteBox class:
 
 		This is because IE wanted to act like the needy asshole it is and fuck shit up with dimensions.
 
-Liked it? Buy me a cookie and a coffee. :)
-
 CSS:
 
 				.taggedName {
@@ -622,6 +620,9 @@ CSS:
 				}
 
 		invisibleBorder is to remove borders from all elements inside the AutoCompleteBox, to remove border/outlines in focus/active/default. combinedBorder places a border on AutoCompleteBox that makes it look like a simgle component. noScroll isn used to restric the box as only a single line box if its not a multiple value box.
+
+
+Liked it? Buy me a cookie and a coffee. :)
 
 Daanish Millwalla.
 ImplementHIT.
