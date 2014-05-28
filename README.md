@@ -170,6 +170,8 @@ The AutoCompleteBox class:
 
 				DOM.setStyleAttribute(container.getElement(),"overflowX","hidden");
 
+		This is so that it only grows vertically. A horizontal scroll would be too big and wouldn't exactly look too good, but a vertical scroll be that big a deal. If it allows multiple search terms, its important it grows only vertically to fit contents, not wide. It can grow infinitely, and the ScrollPanel will take care of it.
+
 				if(multiSuggest)
 
 				{
@@ -500,6 +502,126 @@ The AutoCompleteBox class:
 		This is because IE wanted to act like the needy asshole it is and fuck shit up with dimensions.
 
 Liked it? Buy me a cookie and a coffee. :)
+
+CSS:
+
+				.taggedName {
+					outline: none;
+					font-size: 10px;
+				}
+
+				.tagged {
+					border: 1px;
+					border-style: solid;
+					border-color: #999999;
+					border-radius: 5px;
+					float: left;
+				}
+
+				.tagged:hover {
+					background-color: #a6b3cf;
+				}
+
+				.taggedX {
+					font-size: 10px;
+				}
+
+				.taggedX:hover {
+					cursor: pointer;
+				}
+
+				.taggedX {
+					font-size: 10px;
+					
+				}	
+					
+				.taggedX:hover{
+					cursor:pointer;
+					}
+
+		All classes that have 'tagged' in their names are for SearchTerms. tagged CSS class places a combined border over them, while taggedName and taggedX remove their respective border/outlines, place pointer cursor on 'X', etc.
+					
+				.invisibleBorder{
+					outline:none;
+					border:1px;
+					border-color:#ffffff;
+					border-style:solid;
+				}
+
+				.invisibleBorder:focus{
+					outline:none;
+					border:1px;
+					border-color:#ffffff;
+					border-style:solid;
+				}
+
+				.invisibleBorder:active{
+					outline:none;
+					border:1px;
+					border-color:#ffffff;
+					border-style:solid;
+				}
+
+				input.invisibleBorder:focus{
+					outline:none;
+					border:1px;
+					border-color:#ffffff;
+					border-style:solid;
+
+				}
+
+				.invisibleBorder:active {
+					outline: none;
+					border: 1px;
+					border-color: #ffffff;
+					border-style: solid;
+					width: 100%;
+				}
+
+				input.invisibleBorder:focus {
+					outline: none;
+					border: 1px;
+					border-color: #ffffff;
+					border-style: solid;
+					width: 100%;
+				}
+
+				.invisibleBorder:focus {
+					outline: none;
+					border: 1px;
+					border-color: #ffffff;
+					border-style: solid;
+					float: left;
+				}
+
+				.combinedBorder {
+					border: inset 2px #EBE9ED;
+					border-right: solid 1px #CCCCCC;
+					border-bottom: solid 1px #CCCCCC;
+					background-color: #ffffff;
+				}
+
+				input.invisibleBorder:focus {
+					outline: none;
+					border: 1px;
+					border-color: #ffffff;
+					border-style: solid;
+				}
+
+				.noScroll {
+					overflow: hidden;
+					outline: none;
+				}
+
+				.combinedBorder {
+					border: inset 2px #EBE9ED;
+					border-right: solid 1px #CCCCCC;
+					border-bottom: solid 1px #CCCCCC;
+					width: 200px;
+					background-color: #ffffff;
+				}
+
+		invisibleBorder is to remove borders from all elements inside the AutoCompleteBox, to remove border/outlines in focus/active/default. combinedBorder places a border on AutoCompleteBox that makes it look like a simgle component. noScroll isn used to restric the box as only a single line box if its not a multiple value box.
 
 Daanish Millwalla.
 ImplementHIT.
