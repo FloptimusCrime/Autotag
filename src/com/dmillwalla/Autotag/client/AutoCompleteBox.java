@@ -54,22 +54,13 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler {
 		isDisabled = disabled;
 
 	}
-
-
-	public AutoCompleteBox(SuggestionSource suggestionSource, boolean multi, boolean restricted ){
-
-
-		this.restricted = restricted;
-		init(suggestionSource, multi);
-
-
-	}
+	
 	
 	public void setDisable(boolean disable){
 		isDisabled = disable;
 	}
 
-	public void init( SuggestionSource suggestionSource, boolean multi){
+	private void init( SuggestionSource suggestionSource, boolean multi){
 
 		text=new StringBuilder();
 		multiSuggest = multi;
@@ -455,9 +446,6 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler {
 
 		}
 
-		public void disableClickHandler(){
-			this.addClickHandler(null);
-		}
 
 		public void onClick(ClickEvent event) {
 

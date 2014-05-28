@@ -48,3 +48,10 @@ www-test/\
 target\
 *.DS_Store\
 }
+war/autotag/autotag.nocache.js
+war/autotag/autotag.devmode.js
+test-classes/.DS_Store
+test-classes/com/.DS_Store
+war/.DS_Store
+.settings/.DS_Store
+.DS_Store

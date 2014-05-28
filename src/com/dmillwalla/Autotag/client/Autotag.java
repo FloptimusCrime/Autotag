@@ -43,7 +43,7 @@ public class Autotag implements EntryPoint {
 		allSuggestions.add("TestString");
 		
 		
-		_autocompleteBox = new AutoCompleteBox(_suggestionsSource, true, false);
+		_autocompleteBox = new AutoCompleteBox(_suggestionsSource, true, false, false);
 		
 		_suggestContainer.add(_suggestionBox);
 		_suggestContainer.add(_submit);
@@ -67,7 +67,7 @@ public class Autotag implements EntryPoint {
 					
 					allSuggestions.add( _suggestionBox.getText() );
 					_mainPanel.remove(_autocompleteBox);
-					_autocompleteBox = new AutoCompleteBox(_suggestionsSource, true, false);
+					_autocompleteBox = new AutoCompleteBox(_suggestionsSource, true, false, false);
 					_mainPanel.insert(_autocompleteBox,1);
 					_suggestionBox.setText(""); 
 					
