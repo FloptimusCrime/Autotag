@@ -41,7 +41,7 @@ public class AutoCompleteBox extends FocusPanel implements KeyDownHandler {
 	HashSet<String> multiWord;
 	HashSet<String> suggestions;
 
-	boolean multiSuggest;
+	boolean multiSuggest = false;
 	boolean restricted = false;
 	boolean isDisabled = false;
 
