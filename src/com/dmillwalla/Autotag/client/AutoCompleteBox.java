@@ -34,7 +34,7 @@ import com.google.gwt.user.client.ui.SuggestOracle.Suggestion;
 public class AutoCompleteBox extends FocusPanel implements KeyDownHandler { 
 	FlowPanel rootPanel;
 	ScrollPanel container;
-	public SuggestBox inputBox;
+	SuggestBox inputBox;
 	SuggestionSource _suggestionSource;
 	MultiWordSuggestOracle _oracle = new MultiWordSuggestOracle();
 	StringBuilder text;
