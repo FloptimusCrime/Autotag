@@ -1,4 +1,4 @@
-package com.dmillwalla.Autotag.client;
+package com.implementhit.dam.Autotag.client;
 
 import java.util.ArrayList;
 import java.util.Arrays;
