@@ -1,3 +1,8 @@
+AutoTag
+=======
+
+AutoTag in GWT
+
 Working code at: <a href = 'http://autotagbox.appspot.com' target = '_blank'> autotagbox.appspot.com </a>
 
 Code walkthrough:
@@ -627,6 +632,3 @@ Liked it? Buy me a cookie and a coffee. :)
 Daanish Millwalla.
 ImplementHIT.
 @FloptimusCrime
-
-
-

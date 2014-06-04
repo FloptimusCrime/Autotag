@@ -1,3 +1,4 @@
+#Daanish's gitignore
 # Created by http://www.gitignore.io
 
 #!! ERROR: gwtgwt is undefined. Use list command to see defined gitignore types !!#
@@ -39,3 +40,18 @@ test-classes/com/.DS_Store
 war/.DS_Store
 .settings/.DS_Store
 .DS_Store
+
+#Ajay's gitignore
+
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
